@@ -11,6 +11,9 @@
 bool repeating_timre_callback(struct repeating_timer *t){
 
     printf("%d", t->user_data);
+    t->user_data++;
+    if ((int) t->user_data > 2)
+        t->user_data = 0;
     return true;
 }
 
